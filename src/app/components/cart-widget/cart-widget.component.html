@@ -1,0 +1,21 @@
+<div class="list-group">
+  <div class="list-group-item" *ngFor="let cartItem of cartItems$ | async">
+    <button
+      class="close"
+      (click)="cartService.removeProduct(cartItem.product, true)"
+    >
+      &times;
+    </button>
+    <p>{{ cartItem.product.name }} x {{ cartItem.amount }}</p>
+    <small
+      >{{ cartItem.product.price }}€ x {{ cartItem.amount }} =
+      {{ cartItem.subtotal }}€</small
+    >
+  </div>
+</div>
+
+<div class="text-center p-4 mt-2">
+  <h4>Total {{ total$ | async }}€</h4>
+  <hr />
+  <button class="btn btn-orange btn-block text-white">Checkout</button>
+</div>
