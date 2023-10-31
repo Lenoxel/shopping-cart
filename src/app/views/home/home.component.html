@@ -3,19 +3,25 @@
     <products-list [products]="products$ | async">
       <ng-container *forProduct="let product; ofType: 'default'">
         <div class="product-image"></div>
-        <h4>{{ product.name }} (custom default)</h4>
+        <!-- <h4>{{ product.name }} (custom default)</h4> -->
+        <h4>{{ product.name }}</h4>
+        <h3 style="font-weight: 800">{{ product.price }}€</h3>
         <cart-item-control [product]="product"></cart-item-control>
       </ng-container>
 
       <ng-container *forProduct="let product; ofType: 'promo'">
-        <div class="product-image"></div>
-        <h4>{{ product.name }} ({{ product.type }})</h4>
+        <!-- <div class="product-image"></div> -->
+        <!-- <h4>{{ product.name }} ({{ product.type }})</h4> -->
+        <h4>{{ product.name }}</h4>
+        <h3 style="font-weight: 800">{{ product.price }}€</h3>
         <cart-item-control [product]="product"></cart-item-control>
       </ng-container>
 
       <ng-container *forProduct="let product; ofType: 'outlet'">
-        <div class="product-image"></div>
-        <h4>{{ product.name }} ({{ product.type }})</h4>
+        <!-- <div class="product-image"></div> -->
+        <!-- <h4>{{ product.name }} ({{ product.type }})</h4> -->
+        <h4>{{ product.name }}</h4>
+        <h3 style="font-weight: 800">{{ product.price }}€</h3>
         <cart-item-control [product]="product"></cart-item-control>
       </ng-container>
     </products-list>
@@ -24,8 +30,9 @@
   <div class="col-3">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Cart Items</h4>
+        <h3 class="card-title font-weight-bold">Cart Items</h3>
       </div>
+      <hr style="height: 1rem; color: blue" />
       <cart-widget></cart-widget>
     </div>
   </div>

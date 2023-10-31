@@ -1,0 +1,11 @@
+.active {
+    border-bottom: 8px solid #bd2130;
+}
+
+.nav-link {
+    padding: 2rem 1rem;
+}
+
+.navbar {
+    padding: 0.5rem 2.5rem;
+}

@@ -1,9 +1,33 @@
-<span *ngIf="item; else notInCart">
-  <button (click)="cartService.removeProduct(product)">-</button>
-  <input disabled [value]="item.amount" />
-  <button (click)="cartService.addProduct(product)">+</button>
+<span *ngIf="item; else notInCart" style="display: flex; gap: 8px">
+  <button
+    type="button"
+    class="btn btn-light"
+    (click)="cartService.removeProduct(product)"
+  >
+    <h4>-</h4>
+  </button>
+  <input class="quantity-input" disabled [value]="item.amount" />
+  <button
+    type="button"
+    class="btn btn-light"
+    (click)="cartService.addProduct(product)"
+  >
+    <h4>+</h4>
+  </button>
 </span>
 
 <ng-template #notInCart>
-  <button (click)="cartService.addProduct(product)">Add to Cart</button>
+  <button
+    type="button"
+    class="btn btn-light"
+    (click)="cartService.addProduct(product)"
+  >
+    <img
+      src="assets/icons/plus.svg"
+      width="30"
+      height="30"
+      alt="Ícone de Adicionar"
+    />
+    Add
+  </button>
 </ng-template>

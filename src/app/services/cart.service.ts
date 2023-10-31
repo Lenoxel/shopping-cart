@@ -92,6 +92,13 @@ export class CartService {
     this.handleUpdateCartItems(productsToUpdate);
   }
 
+  removeAllProducts() {
+    this.handleUpdateCartItems({
+      items: [],
+      total: 0,
+    });
+  }
+
   //HELPER METHODS
 
   protected updateCartState(products: CartProducts) {
